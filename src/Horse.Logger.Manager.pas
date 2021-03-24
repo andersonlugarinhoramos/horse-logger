@@ -72,6 +72,7 @@ begin
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('time', THorseLoggerManager.ValidateValue(LBeforeDateTime));
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('execution_time', THorseLoggerManager.ValidateValue(LMilliSecondsBetween.ToString));
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('request_clientip', THorseLoggerManager.ValidateValue(ClientIP(AReq)));
+      LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('request_body', THorseLoggerManager.ValidateValue(AReq.Body));
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('request_method', THorseLoggerManager.ValidateValue(AReq.RawWebRequest.Method));
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('request_version', THorseLoggerManager.ValidateValue(AReq.RawWebRequest.ProtocolVersion));
       LLog.{$IFDEF FPC}Add{$ELSE}AddPair{$ENDIF}('request_url', THorseLoggerManager.ValidateValue(AReq.RawWebRequest.URL));
